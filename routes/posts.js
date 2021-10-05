@@ -17,7 +17,7 @@ router.post("/", async (req, res) => {
 router.put("/:id", async (req, res) => {
     try {
         const post = await Post.findById(req.params.id);
-        if (post.username === req.body.username) {
+        if (post.username === req.body.username || req.body.admin) {
             try {
                 const updatedPost = await Post.findByIdAndUpdate(req.params.id, {
                     $set: req.body,
