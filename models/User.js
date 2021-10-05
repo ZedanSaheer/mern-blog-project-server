@@ -19,10 +19,6 @@ const UserSchema = new mongoose.Schema({
         type:String,
         default:"",
     },
-    admin:{
-        type:Boolean,
-        default:false,
-    }
 },{timestamps:true});
 
 module.exports = mongoose.model("User",UserSchema)
